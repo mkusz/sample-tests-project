@@ -1,0 +1,34 @@
+[tool.poetry]
+name = "sample-tests-project"
+version = "0.1.0"
+description = ""
+authors = ["Maciej Kusz <maciej.kusz@gmail.com>"]
+readme = "README.md"
+packages = [
+    {include = "*", from = "src"},
+    {include = "*", from = "tests"},
+]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+playwright = "^1.29.1"
+pytest = "^7.2.1"
+pydantic = "^1.10.4"
+python-dotenv = "^0.21.0"
+pytest-asyncio = "^0.20.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+
+[tool.pytest.ini_options]
+addopts = "--capture=sys"
+asyncio_mode = "auto"
+markers = [
+    "somemarker: Just to show how to put it here",
+    ]
+testpaths = [
+    "tests",
+]
